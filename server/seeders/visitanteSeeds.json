@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Alberto Diaz",
+        "motivo": "entrevista",
+        "fecha":"2022/05/10"
+    },
+    {
+        "name": "Claudia Ortiz",
+        "motivo": "Asesoria empresarial",
+        "fecha": "2022/06/25"
+    },
+    {
+        "name": "Carlos Venegas",
+        "motivo": "Entrega de mercancía",
+        "fecha": "2022/12/01"
+    },
+    {
+        "name": "Dalia Torres",
+        "motivo": "entrevista",
+        "fecha": "2022/11/05"
+    },
+    {
+        "name": "Juan Rodriguez",
+        "motivo": "Junta con Gerente",
+        "fecha": "2022/12/10"
+    },
+    {
+        "name": "Antonio Garza",
+        "motivo": "Cliente ver avances en trabajo",
+        "fecha": "2022/12/22"
+    }
+]

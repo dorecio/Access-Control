@@ -1,0 +1,42 @@
+[
+    {
+        "name":"Juan Pablo Sierra",
+        "email":"juan@gmail.com",
+        "password":"12345",
+        "permiso":"usuario",
+        "departamento":"Vigilancia",
+        "tel":"432157346"
+    },
+    {
+        "name": "Sergio Rivera",
+        "email": "sergio@gmail.com",
+        "password": "123456",
+        "permiso": "empleado",
+        "departamento": "Finanzas",
+        "tel": "432157234"
+    },
+    {
+        "name": "Alejandra Alvarez",
+        "email": "ale@gmail.com",
+        "password": "1234567",
+        "permiso": "administrador",
+        "departamento": "Recursos Humanos",
+        "tel": "321234879"
+    },
+    {
+        "name": "Jesús Valdés",
+        "email": "jesus@gmail.com",
+        "password": "12345678",
+        "permiso": "empleado",
+        "departamento": "Ingenieria",
+        "tel": "432158704"
+    },
+    {
+        "name": "Fernanda Ortiz",
+        "email": "fer@gmail.com",
+        "password": "123456789",
+        "permiso": "empleado",
+        "departamento": "Diseño",
+        "tel": "432153692"
+    }
+]
