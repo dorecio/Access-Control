@@ -3,6 +3,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const sendEmail = require("./utils/sendEmail");
+const cors = require("cors");
 
 const { typeDefs, resolvers } = require('./schemas');
 //const { authMiddleware } = require('./utils/auth');
@@ -21,6 +22,7 @@ const server = new ApolloServer({
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 // Entregar activos estáticos
 app.use('/images', express.static(path.join(__dirname, '../client/images')));
@@ -35,6 +37,9 @@ app.get('/', (req, res) => {
 
 //EndPoint de correo
 app.post("/api/sendemail", async (req, res) => {
+  var postParams = req.body;
+  console.log('  postParams:',  postParams);
+
   console.log('bodySendMail:',req.body);
   const { email, sub, msg } = req.body;
 

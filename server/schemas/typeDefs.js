@@ -19,6 +19,14 @@ type Empleado {
     motivo:String!
     fecha:String!
   }
+  
+  type Visita {
+    _id: ID!
+    email: String
+    visitante: String
+    motivo: String
+    createdAt: String
+  }
 
   type Query {
     empleados: [Empleado]!
@@ -30,8 +38,10 @@ type Empleado {
   type Mutation {
     addEmpleado (name : String!,email:String!,password: String,
         permiso:String!,departamento:String!,tel:String): Empleado
-    addVisita (name:String!,motivo:String!,fecha:String!):Visitante
-      }
+
+    addVisita (email : String!, visitante: String!, motivo:String!) : Visita
+
+  }
 
 `;
 
