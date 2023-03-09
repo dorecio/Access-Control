@@ -1,7 +1,7 @@
 {
-  "name": "programming-thoughts",
+  "name": "access-control",
   "version": "1.0.0",
-  "description": "",
+  "description": "aplicacion de control de acceso",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",

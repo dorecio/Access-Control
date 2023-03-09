@@ -23,13 +23,14 @@ const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
   };
 
   // Send Email
-  transporter.sendMail(options, function (err, info) {
+  let result = transporter.sendMail(options, function (err, info) {
     if (err) {
       console.log(err);
     } else {
       console.log(info);
     }
   });
+  console.log("Envio de correo :", result);
 };
 
 module.exports = sendEmail;
