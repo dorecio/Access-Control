@@ -1,5 +1,6 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 import Home from './Pages/Home';
@@ -15,13 +16,17 @@ const client = new ApolloClient({
   function App() {
     return (
       <ApolloProvider client={client}>
+        <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
-            <Home />
+          <Routes>
+            <Route exact path="/" element={<Home/>}/> 
+            </Routes>
           </div>
           <Footer />
         </div>
+        </Router>
       </ApolloProvider>
     );
   }

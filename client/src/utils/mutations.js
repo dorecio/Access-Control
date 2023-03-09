@@ -8,3 +8,14 @@ export const ADD_EMPLEADO = gql`
     }
   }
 `;
+
+export const ADD_VISITA = gql`
+  mutation addVisita($emailText: String!, $visitanteText: String!, $motivoText: String!) {
+    addVisita(email: $emailText, visitante: $visitanteText, motivo: $motivoText) {
+      _id
+      email
+      visitante
+      motivo
+    }
+  }
+`;
