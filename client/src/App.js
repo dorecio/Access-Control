@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import VisitaForm  from './components/VisitaForm';
 
 const client = new ApolloClient({
     uri: '/graphql',
@@ -22,7 +23,11 @@ const client = new ApolloClient({
           <div className="container">
           <Routes>
             <Route exact path="/" element={<Home/>}/> 
-            </Routes>
+            <Route
+                path='/visita/:empleadoId'
+                element={<VisitaForm/>}
+              />            
+          </Routes>
           </div>
           <Footer />
         </div>
