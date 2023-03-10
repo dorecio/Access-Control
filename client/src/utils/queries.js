@@ -7,6 +7,7 @@ export const QUERY_EMPLEADOS = gql`
       name
       departamento
       tel
+      email
     }
   }
 `;
