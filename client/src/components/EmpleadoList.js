@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const EmpleadoList = ({ empleados, name}) => {
   if (!empleados.length) {
@@ -16,6 +17,9 @@ const EmpleadoList = ({ empleados, name}) => {
             </h4>
             <div className="card-body bg-light p-2">
               <p>{empleado.name}</p>
+            </div>
+            <div className="card-footer bg-light p-2">
+              <Link to={"/visita/"+empleado.email}>Registro de Visitante</Link>              
             </div>
           </div>
         ))}
