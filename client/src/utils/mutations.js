@@ -19,3 +19,16 @@ export const ADD_VISITA = gql`
     }
   }
 `;
+
+export const UPDATE_VISITA = gql`
+mutation updateVisita($id: ID!, $acceso: Int!) {
+  updateVisita(id: $id, acceso: $acceso) {
+    _id
+    email
+    visitante
+    motivo
+    acceso
+    createdAt
+  }
+}
+`;
