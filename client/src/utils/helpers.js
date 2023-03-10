@@ -1,11 +1,13 @@
 module.exports = {
     body_email : (email, sub, visitante, motivo, idVisita) =>{
+        console.log('url env', process.env.URL_SENDMAIL);
+        const urlAcceso = process.env.URL_ACCESO || 'http://localhost:3000/acceso'
         const message = `
         <h3>Solicitud de acceso de : ${visitante} <br>
         <h3>Motivo : ${motivo} <br>
         
-        <p>Permitir: <a href='https://www.npmjs.com/visitpage?idvisita=${idVisita}&acceso=1'>PERMITIR</a></p>
-        <p>Denegar: <a href='https://www.npmjs.com/visitpage?idvisita=${idVisita}&acceso=2'>DENEGAR</a></p>
+        <p>Permitir: <a href='${urlAcceso}/${idVisita}/1'>PERMITIR</a></p>
+        <p>Denegar: <a href='${urlAcceso}/${idVisita}/2'>DENEGAR</a></p>
 
         <br>
         <p style="font-size:8pt;line-height:10pt;font-family:&#39;Cambria&#39;,&#39;times roman&#39;,serif">

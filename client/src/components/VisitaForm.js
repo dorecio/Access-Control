@@ -7,10 +7,10 @@ import {body_email} from '../utils/helpers';
 import { ADD_VISITA } from '../utils/mutations';
 
 const VisitaForm = () => {
-    const {empleadoId }  = useParams();
-    console.log("id Parametro:", empleadoId);
+    const {empleadoEmail }  = useParams();
+    console.log("id Parametro:", empleadoEmail);
     const [formState, setFormState] = useState({
-        emailText:'',
+        emailText:empleadoEmail,
         motivoText: '',
         visitanteText:''
         });
@@ -23,21 +23,24 @@ const VisitaForm = () => {
              const { data } = await addVisita ({
               variables: { ...formState },
             });
-            console.log('Nueva cita:', data);
-
+            console.log('Id Nueva cita:', data.addVisita._id);
+            const idCita = data.addVisita._id;
             //Enviar correo de aviso
-            const payload = body_email(formState.emailText, 'Solicitud de acceso.',formState.visitanteText, formState.motivoText);
+            if (idCita){
+                const payload = body_email(formState.emailText, 'Solicitud de acceso.',formState.visitanteText, formState.motivoText,idCita);
+                const usrSendMail = process.env.URL_SENDMAIL || "http://localhost:3001/api/sendemail"
 
-            var response = await fetch("http://localhost:3001/api/sendemail",{
-                //mode: "no-cors",
-                method:"POST",
-                body:payload,
-                headers:{
-                  "Content-Type":"application/json"
-                }
-              });
-              const result = await response.json();
-              console.log("envio de correo :", result);        
+                var response = await fetch( `${usrSendMail}`,{
+                    //mode: "no-cors",
+                    method:"POST",
+                    body:payload,
+                    headers:{
+                      "Content-Type":"application/json"
+                    }
+                  });
+                  const result = await response.json();
+                  console.log("envio de correo :", result);            
+            }
               
             setFormState({
                 emailText:'',
@@ -60,7 +63,7 @@ const VisitaForm = () => {
     
     return (
         <div>
-          <h3>Registro de Visitante</h3>
+          <h3>What's on your techy mind?</h3>
     
           <p
             className={`m-0 ${
@@ -77,7 +80,7 @@ const VisitaForm = () => {
             <div className="col-12 col-lg-9">
               <input
                 name="emailText"
-                placeholder="Correo del empleado..."
+                placeholder="Capturar el correo..."
                 value={formState.emailText}
                 className="form-input w-100"
                 onChange={handleChange}
@@ -87,7 +90,7 @@ const VisitaForm = () => {
             <div className="col-12 col-lg-9">
               <input
                 name="motivoText"
-                placeholder="Capturar el motivode su visita..."
+                placeholder="Capturar el motivo..."
                 value={formState.motivoText}
                 className="form-input w-100"
                 onChange={handleChange}
@@ -97,7 +100,7 @@ const VisitaForm = () => {
             <div className="col-12 col-lg-9">
               <input
                 name="visitanteText"
-                placeholder="Capturar el nombre del visitante..."
+                placeholder="Capturar el visitante..."
                 value={formState.visitanteText}
                 className="form-input w-100"
                 onChange={handleChange}
