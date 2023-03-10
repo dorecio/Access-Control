@@ -28,7 +28,14 @@ const resolvers = {
     },
     addVisita : async (parent, {email, visitante, motivo}) => {
       return await Visita.create({email, visitante, motivo});
-  }    
+  },
+  updateVisita : async (parent, {id, acceso}) => {
+    return await Visita.findOneAndUpdate(
+     {_id:id},
+     {acceso},
+     {new:true}
+   ); 
+ }      
 /*     addVisita: async (parent, { args }) => {
       return await Visitante.create(args);
     } */
