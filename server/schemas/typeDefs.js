@@ -25,6 +25,7 @@ type Empleado {
     email: String
     visitante: String
     motivo: String
+    acceso: Int
     createdAt: String
   }
 
@@ -40,7 +41,8 @@ type Empleado {
         permiso:String!,departamento:String!,tel:String): Empleado
 
     addVisita (email : String!, visitante: String!, motivo:String!) : Visita
-
+    
+    updateVisita (id: ID!, acceso: Int!) : Visita
   }
 
 `;

@@ -17,6 +17,10 @@ const visitaSchema = new Schema(
             required: true,
             trim: true
             },
+        acceso: {
+            type: Number,
+            default: 0
+            },            
         createdAt: {
                 type: Date,
                 default: Date.now,
