@@ -34,6 +34,7 @@ type Empleado {
     empleado(email:String!) : Empleado
     visitasAll:[Visitante]
    # visitas(_id:ID!):[Visitante]
+   visitasGet:[Visita]!
   }
 
   type Mutation {

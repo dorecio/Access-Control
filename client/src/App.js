@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import VisitaForm  from './components/VisitaForm';
 import AccesoForm from './components/AccesoForm';
+import Dasboard from './components/Dashboard';
 
 const client = new ApolloClient({
     uri: '/graphql',
@@ -32,6 +33,7 @@ const client = new ApolloClient({
                 path='/acceso/:id/:acceso'
                 element={<AccesoForm/>}
               />            
+            <Route exact path="/dashboard/" element={<Dasboard/>}/> 
           </Routes>
           </div>
           <Footer />
