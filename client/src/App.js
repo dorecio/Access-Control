@@ -33,7 +33,7 @@ const client = new ApolloClient({
                 path='/acceso/:id/:acceso'
                 element={<AccesoForm/>}
               />            
-            <Route exact path="/dashboard/" element={<Dasboard/>}/> 
+            <Route exact path="/dashboard/:estatus" element={<Dasboard/>}/> 
           </Routes>
           </div>
           <Footer />
