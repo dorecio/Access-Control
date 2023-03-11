@@ -1,5 +1,7 @@
 //const { Empleado, Visitante } = require('../models');
 const { Empleado, Visita } = require('../models');
+const startOfDay = require( 'date-fns/startOfDay');
+const endOfDay = require('date-fns/endOfDay') ;
 
 const resolvers = {
   Query: {
@@ -13,7 +15,9 @@ const resolvers = {
       return await Visita.find({});
     },
     visitasGet : async () => {
-      return await Visita.find({});
+      return await Visita.find({
+        //createdAt : {$gte: startOfDay(new Date()) , $lte: endOfDay(new Date()) }
+      });
     }
 /*     visitasAll: async () => {
       return await Visitante.find({});
