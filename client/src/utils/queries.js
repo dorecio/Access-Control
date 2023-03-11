@@ -11,3 +11,17 @@ export const QUERY_EMPLEADOS = gql`
     }
   }
 `;
+
+export const QUERY_VISITAS_GET = gql`
+  query visitasGet {
+    visitasGet {
+      _id
+      email
+      visitante
+      motivo
+      acceso
+      createdAt
+    }
+  }
+`;
+

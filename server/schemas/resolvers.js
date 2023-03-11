@@ -11,7 +11,10 @@ const resolvers = {
     },
     visitasAll: async () => {
       return await Visita.find({});
-    }    
+    },
+    visitasGet : async () => {
+      return await Visita.find({});
+    }
 /*     visitasAll: async () => {
       return await Visitante.find({});
     } */
