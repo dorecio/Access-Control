@@ -1,44 +1,47 @@
 const dotenv = require("dotenv").config();
-const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
-const path = require('path');
+const express = require("express");
+const { ApolloServer } = require("apollo-server-express");
+const path = require("path");
 const sendEmail = require("./utils/sendEmail");
 const cors = require("cors");
+// import { register } from "./controllers/auth.js";
 
-const { typeDefs, resolvers } = require('./schemas');
+const { typeDefs, resolvers } = require("./schemas");
 //const { authMiddleware } = require('./utils/auth');
-const db = require('./config/connection');
-
+const db = require("./config/connection");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-//  context: authMiddleware,
+  //  context: authMiddleware,
 });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
-// Entregar activos estáticos
-app.use('/images', express.static(path.join(__dirname, '../client/images')));
+//auth
+// app.post("/auth/register", register);
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
+// Entregar activos estáticos
+app.use("/images", express.static(path.join(__dirname, "../client/images")));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 //EndPoint de correo
 app.post("/api/sendemail", async (req, res) => {
   var postParams = req.body;
-  console.log('  postParams:',  postParams);
+  console.log("  postParams:", postParams);
 
-  console.log('bodySendMail:',req.body);
+  console.log("bodySendMail:", req.body);
   const { email, sub, msg } = req.body;
 
   try {
@@ -59,13 +62,13 @@ app.post("/api/sendemail", async (req, res) => {
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
-  server.applyMiddleware({ app, path: '/graphql' });
-  
+  server.applyMiddleware({ app, path: "/graphql" });
+
   app.listen(PORT, () => {
-      console.log(`API server running on port ${PORT}!`);
-      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-    })
-  };
-  
+    console.log(`API server running on port ${PORT}!`);
+    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+  });
+};
+
 // Call the async function to start the server
-  startApolloServer(typeDefs, resolvers);
+startApolloServer(typeDefs, resolvers);
