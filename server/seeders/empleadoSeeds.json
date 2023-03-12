@@ -1,11 +1,11 @@
 [
     {
-        "name":"Juan Pablo Sierra",
-        "email":"juan@gmail.com",
-        "password":"12345",
-        "permiso":"usuario",
-        "departamento":"Vigilancia",
-        "tel":"432157346"
+        "name": "David Morales",
+        "email": "david_morales95@outlook.com",
+        "password": "12345",
+        "permiso": "usuario",
+        "departamento": "Vigilancia",
+        "tel": "432157346"
     },
     {
         "name": "Sergio Rivera",
