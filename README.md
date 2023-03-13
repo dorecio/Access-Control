@@ -30,15 +30,13 @@ Pegar la siguiente liga en el navegador y ejecutarla
 ****************
 ## Uso
 
-### Instrucciones de uso
-
-Video demostrativo
-**************************************
-
 ### Ejemplos de uso
 
-Pantalla de inicio
-![img](/assets/images)
+![img](/client/assets/images/img01.png)
+
+![img](/client/assets/images/img02.png)
+
+![img](/client/assets/images/img03.png)
 
 ## Contribuciones
 
@@ -53,8 +51,6 @@ Pantalla de inicio
 5. Vuelve a la pagina del repositorio de "fork" y dá clic en el botón "Compare and Pull Request"
 6. Ingrese descripción para ayudar al propietario de este proyecto a entender que es lo que se intenta contribuir
 7. Hacer clic en "Create Pull Request"
-
-## Pruebas
 
 ## Preguntas
 
