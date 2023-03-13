@@ -12,7 +12,6 @@ Sistema de Control de Acceso Empresarial, que permite a cada empleado autorizar 
 - [Instalación](#Instalación)
 - [Uso](#Uso)
 - [Contribución](#Contribución)
-- [Pruebas](#Pruebas)
 - [Preguntas](#Preguntas)
 
 ## Instalación
@@ -25,18 +24,24 @@ Requisitos
 5. MongoDB y ODM de Mongoose
 
 Instalación
-Pegar la siguiente liga en el navegador y ejecutarla
 
-****************
+Ejecutar la siguiente liga en la barra de busqueda del navegador
+
+https://access-control.herokuapp.com/dashboard
+
+
 ## Uso
 
 ### Ejemplos de uso
 
 ![img](/client/assets/images/img01.png)
 
+
 ![img](/client/assets/images/img02.png)
 
+
 ![img](/client/assets/images/img03.png)
+
 
 ## Contribuciones
 
@@ -54,13 +59,20 @@ Pegar la siguiente liga en el navegador y ejecutarla
 
 ## Preguntas
 
-[GitHub](https://github.com/JulioCesarDelAngel)
-[GitHub](https://github.com/Davidmome)
-[GitHub](https://github.com/dorecio)
+[GitHub]https://github.com/JulioCesarDelAngel
+
+[GitHub]https://github.com/Davidmome
+
+[GitHub]https://github.com/dorecio
+
 
 Si tienes preguntas adicionales y deseas contactar a nuestro equipo puedes hacerlo por medio de los siguientes correos electrónicos
+
 sysa.mail@gmail.com
-davidmome@*******
+
+david_morales95@outlook.com
+
 dorisrecio@gmail.com
+
 
 
