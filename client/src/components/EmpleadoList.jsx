@@ -1,13 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
 
-const EmpleadoList = ({ empleados, name}) => {
-  if (!empleados.length) {
+const EmpleadoList = ({ empleados, name }) => {
+  if (!empleados) {
     return <h3>No existen empleados</h3>;
   }
 
   return (
-    <div>
+    <Box m="20px">
       <h3>{name}</h3>
       {empleados &&
         empleados.map((empleado) => (
@@ -19,11 +20,14 @@ const EmpleadoList = ({ empleados, name}) => {
               <p>{empleado.name}</p>
             </div>
             <div className="card-footer bg-light p-2">
-              <Link to={"/visita/"+empleado.email}>Registro de Visitante</Link>              
+              {/* visita form */}
+              <Link to={"/visita/" + empleado.email}>
+                Registro de Visitante
+              </Link>
             </div>
           </div>
         ))}
-    </div>
+    </Box>
   );
 };
 
